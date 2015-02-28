@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:19:30 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/02/28 21:36:02 by jbarbie          ###   ########.fr       */
+/*   Updated: 2015/02/28 22:05:37 by jbarbie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	print_help(t_env *e)
 {
 	move(e->nb_lines - 1, 0);
-	printw("This is a fucking help: ← ↓ ↑ → Echap pour quitter et roule ta tete pour gagner !");
+	printw("Up,Down,Right,Left,Echap.");
 }
 
 static void	get_size_case(t_env *e)
