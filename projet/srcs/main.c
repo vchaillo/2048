@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:02:56 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/02/27 23:49:45 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/02/28 00:35:14 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,9 @@ int		main(void)
 	raw();
 	keypad(stdscr, TRUE);
 	noecho();
-	printw("Hello 42");
-	while ((key = getch()) != 27)
+	draw_grid();
+	while ((key = getch()) != ESCAPE)
 		printw("\n%d", key);
 	endwin();
-	start_game();
 	return (0);
 }
