@@ -6,32 +6,30 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:19:30 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/02/28 15:27:12 by jbarbie          ###   ########.fr       */
+/*   Updated: 2015/02/28 16:16:02 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-void	draw_grid(void)
+void	draw_grid(t_env *e)
 {
-	int		nb_lines;
-	int		nb_columns;
 	int		i;
 
-	getmaxyx(stdscr, nb_lines, nb_columns);
+	getmaxyx(stdscr, e->nb_lines, e->nb_columns);
 	i = 0;
 	while (i <= 5)
 	{
-		wvline(stdscr, '|', nb_lines / 4);
-		move(1, (nb_columns / 4) * i);
+		wvline(stdscr, '|', e->nb_lines / 4);
+		move(1, (e->nb_columns / 4) * i);
 		i++;
 	}
 	i = 0;
 	while (i <= 5)
 	{
-		whline(stdscr, '-', nb_columns - (nb_columns % 4));
-		move(nb_lines / 4 * i, 0);
+		whline(stdscr, '-', e->nb_columns - (e->nb_columns % 4));
+		move(e->nb_lines / 4 * i, 0);
 		i++;
 	}
-	nb_lines++;
+	e->nb_lines++;
 }
