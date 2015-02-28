@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:02:56 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/02/28 18:10:11 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/01 00:13:42 by jbarbie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,12 @@ int		main(void)
 	{
 		clear();
 		draw_grid(&e);
+		if ((key = getch()) == KEY_UP)
+		{
+			move(1, 1);
+			printw("UP IT MOTHERFUCKER !!!!!");
+
+		}
 	}
 	endwin();
 	return (0);
