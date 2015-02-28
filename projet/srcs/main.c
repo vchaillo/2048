@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:02:56 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/02/28 16:53:18 by jbarbie          ###   ########.fr       */
+/*   Updated: 2015/02/28 16:57:32 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int		main(void)
 	noecho();
 	start_color();
 	init_pair(1, COLOR_GREEN, COLOR_GREEN);
+	draw_menu(&e);
 	getmaxyx(stdscr, e.nb_lines, e.nb_columns);
 	while ((key = getch()) != ESCAPE)
 	{
