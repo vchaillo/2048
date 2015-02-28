@@ -1,39 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   game.h                                             :+:      :+:    :+:   */
+/*   rand.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/27 22:15:53 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/02/28 21:23:16 by vchaillo         ###   ########.fr       */
+/*   Created: 2015/02/28 21:44:32 by vchaillo          #+#    #+#             */
+/*   Updated: 2015/02/28 22:05:45 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GAME_H
-# define GAME_H
-# include <curses.h>
-# include <unistd.h>
-# include <stdlib.h>
+#include "game.h"
 
-# define ESCAPE 27
-
-enum			e_const
+static int		get_val(void)
 {
-	WIN_VALUE = 2048
-};
+	int 	val;
+	int		a;
+	int		b;
 
-typedef struct	s_env
+	a = 2;
+	b = 5;
+	srand(time(NULL));
+	while (val == 3)
+		val = rand() % (b - a) + a;
+	return (val);
+}
+
+void			fill_rand_case(t_env *e)
 {
-	int			nb_lines;
-	int			nb_columns;
-	int			case_h;
-	int			case_w;
-	int			grid[4][4];
-}				t_env;
+	int		a;
+	int		b;
+	int		line;
+	int		column;
+	int		val;
 
-void			draw_grid(t_env *e);
-void			draw_menu(t_env *e);
-void			init_colors(void);
+	a = 0;
+	b = 5;
+	srand(time(NULL));
+	line = rand() % (b - a) + a;
+	srand(time(NULL));
+	column = rand() % (b - a) + a;
+	val = get_val();
 
-#endif
+}

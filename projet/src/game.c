@@ -1,39 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   game.h                                             :+:      :+:    :+:   */
+/*   game.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/27 22:15:53 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/02/28 21:23:16 by vchaillo         ###   ########.fr       */
+/*   Created: 2015/02/28 21:14:32 by vchaillo          #+#    #+#             */
+/*   Updated: 2015/02/28 22:01:21 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GAME_H
-# define GAME_H
-# include <curses.h>
-# include <unistd.h>
-# include <stdlib.h>
+#include "game.h"
 
-# define ESCAPE 27
-
-enum			e_const
+void	init_game(t_env *e)
 {
-	WIN_VALUE = 2048
-};
+	int		i;
+	int		j;
+	int		a;
+	int		b;
+	int		nb;
 
-typedef struct	s_env
-{
-	int			nb_lines;
-	int			nb_columns;
-	int			case_h;
-	int			case_w;
-	int			grid[4][4];
-}				t_env;
-
-void			draw_grid(t_env *e);
-void			draw_menu(t_env *e);
-void			init_colors(void);
-
-#endif
+	a = 0;
+	b = 5;
+	i = 0;
+	while (i < 4)
+	{
+		j = 0;
+		while (j < 4)
+		{
+			e->grid[i][j] = 0;
+			j++;
+		}
+		i++;
+	}
+	do_rand(e);
+}
