@@ -1,59 +1,57 @@
-# **************************************************************************** #
+#******************************************************************************#
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+         #
+#    By: jbarbie <jbarbie@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2015/01/27 19:25:58 by vchaillo          #+#    #+#              #
-#    Updated: 2015/02/28 19:24:36 by jbarbie          ###   ########.fr        #
+#    Created: 2015/02/20 18:44:07 by jbarbie           #+#    #+#              #
+#    Updated: 2015/02/28 20:46:05 by jbarbie          ###   ########.fr        #
 #                                                                              #
-# **************************************************************************** #
+#******************************************************************************#
 
-NAME = game_2048
+NAME		=	game_2048
 
-SRCS_NAME = main.c\
-			grid.c\
-			menu.c\
-			colors.c\
+CC			=	gcc
 
-SRCS_PATH = ./srcs/
+CFLAGS		+=	-Wall -Wextra -Werror
 
-OBJS_NAME = $(SRCS_NAME:.c=.o)
+SRC			=	colors.c \
+				grid.c \
+				main.c \
+				menu.c
 
-OBJS_PATH = ./objs/
+LIBNCURSES = -lncurses
 
-SRCS = $(addprefix $(SRCS_PATH),$(SRCS_NAME))
+INC			=	-I inc/
 
-OBJS = $(addprefix $(OBJS_PATH),$(OBJS_NAME))
+OBJ			=	$(patsubst %.c, obj/%.o, $(SRC))
 
-INC = -Iincludes/
+RM			=	rm -Rf
 
-FLAGS = -Wall -Wextra -Werror
+all         :   $(NAME)
 
-LIBNCURSES =  -lncurses
 
-all: $(NAME)
+$(NAME)		:	obj $(OBJ)
+				@$(CC) $(CFLAGS) -o $@ $(OBJ) $(LIBNCURSES)
 
-$(NAME):
-	@gcc -g $(FLAGS) $(INC) -c $(SRCS)
-	@mkdir $(OBJS_PATH)
-	@mv $(OBJS_NAME) $(OBJS_PATH)
-	@gcc -o $(NAME) $(OBJS) $(LIBNCURSES)
-	@echo "\033[32mgame_2048 was created\033[0m"
+obj/%.o		:	src/%.c
+				@gcc $(CFLAGS) $(INC) -o $@ -c $<
+				@echo "[\033[1;32m√\033[m]" $<
+
+obj			:
+				@mkdir -p obj
+
+clean		:
+				@echo "\033[33;31mCleaning files .o ...\033[0m"
+				@$(RM) obj/
+
+fclean		:	clean
+				@echo "\033[33;31mCleaning executables...\033[0m"
+				@$(RM) $(NAME)
 
 norm:
-	@echo "\033[32mnorminette...\033[0m"
-	@norminette **/*.[ch]
+				@echo "\033[32mnorminette...\033[0m"
+				@norminette **/*.[ch]
 
-clean:
-	@rm -rf $(OBJS_PATH)
-	@echo "\033[31mSuppression des .o\033[0m"
-
-fclean: clean
-	@rm -rf $(NAME)
-	@echo "\033[31mSuppression de game_2048\033[0m"
-
-re: fclean all
-
-.PHONY: all norm clean fclean re
+re			:	fclean all
