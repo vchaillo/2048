@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:15:53 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/02/28 22:25:54 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/01 00:34:35 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,10 @@ void			draw_menu(t_env *e);
 void			init_colors(void);
 void			init_game(t_env *e);
 void			fill_rand_case(t_env *e);
+void			game(t_env *e, int key);
+void			move_up(t_env *e);
+void			move_down(t_env *e);
+void			move_left(t_env *e);
+void			move_right(t_env *e);
 
 #endif
