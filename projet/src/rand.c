@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 21:44:32 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/02/28 22:18:11 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/02/28 22:27:52 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,8 @@ void			fill_rand_case(t_env *e)
 	srand(time(NULL));
 	column = rand() % (b - a) + a;
 	val = get_val();
+	(void)line;
+	(void)column;
+	(void)val;
+	(void)e;
 }

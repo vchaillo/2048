@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 21:14:32 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/02/28 22:01:21 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/02/28 22:25:23 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,7 @@ void	init_game(t_env *e)
 {
 	int		i;
 	int		j;
-	int		a;
-	int		b;
-	int		nb;
 
-	a = 0;
-	b = 5;
 	i = 0;
 	while (i < 4)
 	{
@@ -33,5 +28,6 @@ void	init_game(t_env *e)
 		}
 		i++;
 	}
-	do_rand(e);
+	fill_rand_case(e);
+	fill_rand_case(e);
 }

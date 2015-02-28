@@ -6,7 +6,7 @@
 #    By: jbarbie <jbarbie@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/20 18:44:07 by jbarbie           #+#    #+#              #
-#    Updated: 2015/02/28 21:07:17 by vchaillo         ###   ########.fr        #
+#    Updated: 2015/02/28 22:24:26 by vchaillo         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -19,7 +19,9 @@ CFLAGS		+=	-Wall -Wextra -Werror
 SRC			=	colors.c \
 				grid.c \
 				main.c \
-				menu.c
+				menu.c \
+				game.c \
+				rand.c \
 
 LIBNCURSES = -lncurses
 
