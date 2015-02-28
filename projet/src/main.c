@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:02:56 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/01 00:13:42 by jbarbie          ###   ########.fr       */
+/*   Updated: 2015/03/01 00:20:21 by jbarbie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,14 @@ int		main(void)
 	keypad(stdscr, TRUE);
 	noecho();
 	init_colors();
+	init_game(&e);
 	getmaxyx(stdscr, e.nb_lines, e.nb_columns);
 	draw_menu(&e);
 	while ((key = getch()) != ESCAPE)
 	{
 		clear();
 		draw_grid(&e);
-		if ((key = getch()) == KEY_UP)
-		{
-			move(1, 1);
-			printw("UP IT MOTHERFUCKER !!!!!");
-
-		}
+		game(&e);
 	}
 	endwin();
 	return (0);
