@@ -6,14 +6,15 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:15:53 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/02/28 18:19:58 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/02/28 19:25:46 by jbarbie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GAME_H
 # define GAME_H
 # include <curses.h>
-# include "libft.h"
+# include <unistd.h>
+# include <stdlib.h>
 
 # define ESCAPE 27
 
