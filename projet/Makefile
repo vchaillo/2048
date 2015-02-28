@@ -6,14 +6,14 @@
 #    By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/27 19:25:58 by vchaillo          #+#    #+#              #
-#    Updated: 2015/02/27 23:32:15 by vchaillo         ###   ########.fr        #
+#    Updated: 2015/02/28 15:39:06 by vchaillo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = game_2048
 
 SRCS_NAME = main.c\
-			game.c\
+			grid.c\
 
 SRCS_PATH = ./srcs/
 
