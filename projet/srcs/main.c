@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:02:56 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/02/28 17:43:49 by jbarbie          ###   ########.fr       */
+/*   Updated: 2015/02/28 18:01:55 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@ int		main(void)
 	raw();
 	keypad(stdscr, TRUE);
 	noecho();
-	start_color();
-	init_pair(1, COLOR_GREEN, COLOR_GREEN);
+	init_colors();
 	getmaxyx(stdscr, e.nb_lines, e.nb_columns);
 	draw_menu(&e);
 	while ((key = getch()) != ESCAPE)

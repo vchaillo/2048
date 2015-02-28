@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   menu.c                                             :+:      :+:    :+:   */
+/*   colors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/28 16:14:06 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/02/28 18:07:32 by vchaillo         ###   ########.fr       */
+/*   Created: 2015/02/28 17:59:56 by vchaillo          #+#    #+#             */
+/*   Updated: 2015/02/28 18:03:43 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-void	draw_menu(t_env *e)
+void	init_colors(void)
 {
-	move(e->nb_lines / 3, (e->nb_columns / 2) - 15);
-	printw("Welcome to best 2048 game ever!");
-	move(e->nb_lines / 3 + 2, (e->nb_columns / 2) - 15);
-	printw("Press any key to start the game");
+	start_color();
+	init_pair(1, COLOR_GREEN, COLOR_GREEN);
 }

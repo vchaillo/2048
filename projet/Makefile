@@ -6,7 +6,7 @@
 #    By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/27 19:25:58 by vchaillo          #+#    #+#              #
-#    Updated: 2015/02/28 16:43:47 by vchaillo         ###   ########.fr        #
+#    Updated: 2015/02/28 18:01:49 by vchaillo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ NAME = game_2048
 SRCS_NAME = main.c\
 			grid.c\
 			menu.c\
+			colors.c\
 
 SRCS_PATH = ./srcs/
 
