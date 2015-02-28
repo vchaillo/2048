@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:15:53 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/02/28 16:14:39 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/02/28 16:43:58 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ typedef struct	s_env
 }				t_env;
 
 void	draw_grid(t_env *e);
+void	draw_menu(t_env *e);
 
 #endif
