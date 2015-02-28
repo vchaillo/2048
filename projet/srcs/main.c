@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:02:56 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/02/28 16:30:03 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/02/28 16:31:54 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int		main(void)
 	{
 		clear();
 		draw_grid(&e);
-		printw("\n%d", key);
 	}
 	endwin();
 	return (0);
