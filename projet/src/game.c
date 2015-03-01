@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 21:14:32 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/01 05:14:42 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/01 05:19:12 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static void		paint_case(t_env *e, int color, int line, int column)
 	y = 0;
 	while (y < e->ch - 1)
 	{
-		whline(stdscr, ' ', e->cw - 2);
+		whline(stdscr, ' ', e->cw - 1);
 		y++;
 		move((e->ch * line + 1) + y, (e->cw * column + 1));
 	}
@@ -129,6 +129,7 @@ void			color_cases(t_env *e)
 				x++;
 			else
 				paint_a_case_1(e, x, y, e->grid[y][x]);
+			x++;
 		}
 		y++;
 	}

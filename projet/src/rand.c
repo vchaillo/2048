@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 21:44:32 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/01 05:14:32 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/01 05:19:58 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,7 @@ void			fill_rand_case(t_env *e)
 		fill_rand_case(e);
 	else
 	//	e->grid[line][column] = 2;
-		e->grid[0][0] = 4;
+		e->grid[0][0] = 2;
+		e->grid[0][1] = 4;
+		e->grid[0][2] = 64;
 }
