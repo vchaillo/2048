@@ -4,3 +4,4 @@ Todo List:
 ----------
 - Verifier et regler le rand
 - Le move segfault
+- Regler probleme affichage capricieux

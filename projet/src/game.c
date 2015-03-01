@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 21:14:32 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/01 05:19:12 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/01 06:06:53 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,32 @@ void			init_game(t_env *e)
 		}
 		i++;
 	}
+	i = 0;
+	while (i < 4)
+	{
+		j = 0;
+		while (j < 4)
+		{
+			printw("%d", e->grid[i][j]);
+			j++;
+			move(i, e->ch);
+		}
+		i++;
+	}
 	fill_rand_case(e);
-//	fill_rand_case(e);
+	fill_rand_case(e);
+	i = 0;
+	while (i < 4)
+	{
+		j = 0;
+		while (j < 4)
+		{
+			printw("%d", e->grid[i][j]);
+			j++;
+			move(i + 10, e->ch * 2);
+		}
+		i++;
+	}
 }
 
 void			game(t_env *e, int key)
