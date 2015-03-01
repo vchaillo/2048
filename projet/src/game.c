@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 21:14:32 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/01 02:54:42 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/01 03:04:26 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,13 +59,16 @@ void	color_cases(t_env *e)
 			if (e->grid[y][x] == 0)
 				x++;
 			else
-				paint_a_case(e);
+				paint_a_case(e, x, y, e->grid[y][x]);
 		}
 		y++;
 	}
 }
 
-void	paint_a_case(t_env *e)
+void	paint_a_case(t_env *e, int x, int y, int val)
 {
 	(void)e;
+	(void)x;
+	(void)y;
+	(void)val;
 }
