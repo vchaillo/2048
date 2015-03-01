@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:15:53 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/01 21:53:45 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/01 21:56:13 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 
 enum			e_const
 {
-	WIN_VALUE = 7
+	WIN_VALUE = 2048
 };
 
 typedef struct	s_env

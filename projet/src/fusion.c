@@ -6,7 +6,7 @@
 /*   By: jbarbie <jbarbie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/01 19:46:26 by jbarbie           #+#    #+#             */
-/*   Updated: 2015/03/01 21:27:12 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/01 21:57:10 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static void	fusion_down(t_env *e)
 	while (x < 4)
 	{
 		y = 2;
-		while (y > 0)
+		while (y >= 0)
 		{
 			if (e->grid[y][x] == e->grid[y + 1][x] && e->grid[y][x] != 0)
 			{
@@ -90,7 +90,7 @@ static void	fusion_right(t_env *e)
 	while (y < 4)
 	{
 		x = 2;
-		while (x > 0)
+		while (x >= 0)
 		{
 			if (e->grid[y][x] == e->grid[y][x + 1] && e->grid[y][x] != 0)
 			{
