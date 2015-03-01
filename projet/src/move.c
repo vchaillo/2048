@@ -6,7 +6,7 @@
 /*   By: jbarbie <jbarbie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/01 00:23:48 by jbarbie           #+#    #+#             */
-/*   Updated: 2015/03/01 20:16:59 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/01 20:28:13 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ static void		move_up(t_env *e)
 	int		tmp;
 
 	i = 0;
-	while (++i < 4)
+	while (i++ < 4)
 	{
 		j = 0;
-		while (++j < 4)
+		while (j++ < 4)
 		{
 			if ((j + 1) < 4 && e->grid[j + 1][i] != 0)
 			{
@@ -73,10 +73,10 @@ static void		move_left(t_env *e)
 	int		tmp;
 
 	i = 0;
-	while (++i < 4)
+	while (i++ < 4)
 	{
 		j = 0;
-		while (++j < 4)
+		while (j++ < 4)
 		{
 			if ((j + 1) < 4 && e->grid[i][j + 1] != 0)
 			{
