@@ -6,7 +6,7 @@
 /*   By: jbarbie <jbarbie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/01 00:23:48 by jbarbie           #+#    #+#             */
-/*   Updated: 2015/03/01 20:49:39 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/01 22:08:05 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ static void		move_up(t_env *e)
 	int		j;
 	int		tmp;
 
-	i = 0;
-	while (i < 4)
+	i = -1;
+	while (++i < 4)
 	{
-		j = 0;
-		while (j < 4)
+		j = -1;
+		while (++j < 4)
 		{
 			if ((j + 1) < 4 && e->grid[j + 1][i] != 0)
 			{
@@ -33,11 +33,10 @@ static void		move_up(t_env *e)
 					e->grid[j + 1][i] = 0;
 					tmp--;
 					j--;
+					e->move = TRUE;
 				}
 			}
-			j++;
 		}
-		i++;
 	}
 }
 
@@ -48,10 +47,10 @@ static void		move_down(t_env *e)
 	int		tmp;
 
 	i = 4;
-	while (i >= 0)
+	while (--i >= 0)
 	{
 		j = 4;
-		while (j >= 0)
+		while (--j >= 0)
 		{
 			if ((j - 1) >= 0 && e->grid[j - 1][i] != 0)
 			{
@@ -62,11 +61,10 @@ static void		move_down(t_env *e)
 					e->grid[j - 1][i] = 0;
 					tmp++;
 					j++;
+					e->move = TRUE;
 				}
 			}
-			j--;
 		}
-		i--;
 	}
 }
 
@@ -76,11 +74,11 @@ static void		move_left(t_env *e)
 	int		j;
 	int		tmp;
 
-	i = 0;
-	while (i < 4)
+	i = -1;
+	while (++i < 4)
 	{
-		j = 0;
-		while (j < 4)
+		j = -1;
+		while (++j < 4)
 		{
 			if ((j + 1) < 4 && e->grid[i][j + 1] != 0)
 			{
@@ -91,11 +89,10 @@ static void		move_left(t_env *e)
 					e->grid[i][j + 1] = 0;
 					tmp--;
 					j--;
+					e->move = TRUE;
 				}
 			}
-			j++;
 		}
-		i++;
 	}
 }
 
@@ -106,10 +103,10 @@ static void		move_right(t_env *e)
 	int		tmp;
 
 	i = 4;
-	while (i >= 0)
+	while (--i >= 0)
 	{
 		j = 4;
-		while (j >= 0)
+		while (--j >= 0)
 		{
 			if ((j - 1) >= 0 && e->grid[i][j - 1] != 0)
 			{
@@ -120,11 +117,10 @@ static void		move_right(t_env *e)
 					e->grid[i][j - 1] = 0;
 					tmp++;
 					j++;
+					e->move = TRUE;
 				}
 			}
-			j--;
 		}
-		i--;
 	}
 }
 

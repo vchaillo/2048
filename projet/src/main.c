@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:02:56 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/01 21:53:42 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/01 22:16:06 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,19 @@ static void		do_game(t_env *e, int key)
 {
 	clear();
 	draw_grid(e);
-	movements(e, key);
-	e->fusion = FALSE;
-	check_fusion(e, key);
-	if (e->fusion == TRUE)
+	e->move = FALSE;
+	if (e->init == FALSE)
+	{
 		movements(e, key);
-	fill_rand_case(e);
+		e->fusion = FALSE;
+		check_fusion(e, key);
+		if (e->fusion == TRUE)
+			movements(e, key);
+		if (e->move == TRUE)
+			fill_rand_case(e);
+	}
 	color_cases(e);
+	e->init = FALSE;
 }
 
 int				main(void)
