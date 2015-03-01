@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:02:56 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/01 19:41:39 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/01 20:05:04 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ int		main(void)
 		clear();
 		draw_grid(&e);
 		movements(&e, key);
+//		check_fusion(&e, key);
+		fill_rand_case(&e);
 		color_cases(&e);
 	}
 	endwin();

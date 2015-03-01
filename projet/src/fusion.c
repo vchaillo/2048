@@ -6,7 +6,7 @@
 /*   By: jbarbie <jbarbie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/01 19:46:26 by jbarbie           #+#    #+#             */
-/*   Updated: 2015/03/01 19:58:58 by jbarbie          ###   ########.fr       */
+/*   Updated: 2015/03/01 20:01:22 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,6 @@ static void	fusion_right(t_env *e)
 		y++;
 	}
 }
-
 
 void		check_fusion(t_env *e, int key)
 {

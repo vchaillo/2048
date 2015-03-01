@@ -6,7 +6,7 @@
 /*   By: jbarbie <jbarbie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/01 00:23:48 by jbarbie           #+#    #+#             */
-/*   Updated: 2015/03/01 19:44:18 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/01 20:03:24 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,15 @@ static void		move_up(t_env *e)
 		j = 0;
 		while (j < 4)
 		{
-			tmp = i;
-			if (e->grid[tmp][j] == 0)
+			if ((j + 1) < 4 && e->grid[j + 1][i] != 0)
 			{
-				while (tmp < 3)
+				tmp = j;
+				while (tmp >= 0 && e->grid[tmp][i] == 0)
 				{
-					e->grid[tmp][j] = e->grid[tmp + 1][j];
-					e->grid[tmp][j] = 0;
-					tmp++;
+					e->grid[tmp][i] = e->grid[tmp + 1][i];
+					e->grid[tmp + 1][i] = 0;
+					tmp--;
+					j--;
 				}
 			}
 			j++;
@@ -42,7 +43,31 @@ static void		move_up(t_env *e)
 
 static void		move_down(t_env *e)
 {
-	(void)e;
+	int		i;
+	int		j;
+	int		tmp;
+
+	i = 4;
+	while (i >= 0)
+	{
+		j = 4;
+		while (j >= 0)
+		{
+			if ((j - 1) < 4 && e->grid[j - 1][i] != 0)
+			{
+				tmp = j;
+				while (tmp >= 0 && e->grid[tmp][i] == 0)
+				{
+					e->grid[tmp][i] = e->grid[tmp - 1][i];
+					e->grid[tmp - 1][i] = 0;
+					tmp++;
+					j++;
+				}
+			}
+			j--;
+		}
+		i--;
+	}
 }
 
 static void		move_left(t_env *e)
@@ -80,26 +105,26 @@ static void		move_right(t_env *e)
 	int		j;
 	int		tmp;
 
-	i = 0;
-	while (i < 4)
+	i = 4;
+	while (i >= 0)
 	{
-		j = 0;
-		while (j < 4)
+		j = 4;
+		while (j >= 0)
 		{
-			if ((j + 1) < 4 && e->grid[i][j + 1] != 0)
+			if ((j - 1) >= 0 && e->grid[i][j - 1] != 0)
 			{
 				tmp = j;
-				while (tmp >= 0 && e->grid[i][tmp] == 0)
+				while (tmp < 4 && e->grid[i][tmp] == 0)
 				{
-					e->grid[i][tmp] = e->grid[i][tmp + 1];
-					e->grid[i][tmp + 1] = 0;
-					tmp--;
-					j--;
+					e->grid[i][tmp] = e->grid[i][tmp - 1];
+					e->grid[i][tmp - 1] = 0;
+					tmp++;
+					j++;
 				}
 			}
-			j++;
+			j--;
 		}
-		i++;
+		i--;
 	}
 }
 
@@ -113,5 +138,4 @@ void			movements(t_env *e, int key)
 		move_left(e);
 	if (key == KEY_RIGHT)
 		move_right(e);
-	fill_rand_case(e);
 }

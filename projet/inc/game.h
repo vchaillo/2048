@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:15:53 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/01 19:44:16 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/01 20:04:17 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void			init_colors(void);
 void			init_game(t_env *e);
 void			fill_rand_case(t_env *e);
 void			movements(t_env *e, int key);
+void			check_fusion(t_env *e, int key);
 void			color_cases(t_env *e);
 
 #endif
