@@ -6,11 +6,23 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:02:56 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/01 21:06:29 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/01 21:53:42 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
+
+static int		check_win_value(void)
+{
+	int		jl;
+
+	jl = 1;
+	while (jl < WIN_VALUE)
+		jl *= 2;
+	if (jl != WIN_VALUE || WIN_VALUE == 1)
+		return (FALSE);
+	return (TRUE);
+}
 
 static void		do_game(t_env *e, int key)
 {
@@ -39,8 +51,10 @@ int				main(void)
 	init_game(&e);
 	getmaxyx(stdscr, e.nb_lines, e.nb_columns);
 	draw_menu(&e);
-	while ((key = getch()) != ESCAPE)
+	while ((key = getch()) != ESCAPE && check_win_value())
 		do_game(&e, key);
 	endwin();
+	if (!(check_win_value()))
+		write(2, "Incorrect WIN_VALUE\n", 20);
 	return (0);
 }
