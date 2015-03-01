@@ -6,7 +6,7 @@
 /*   By: jbarbie <jbarbie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/01 00:23:48 by jbarbie           #+#    #+#             */
-/*   Updated: 2015/03/01 18:44:01 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/01 19:18:14 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,111 +14,69 @@
 
 static void		move_up(t_env *e)
 {
-	e->c.y = 1;
-	e->c.x = 0;
-	e->c.v = 1;
-	while (e->c.x < 4)
+	int		i;
+	int		j;
+	int		tmp;
+
+	i = 0;
+	while (i < 4)
 	{
-		while (e->c.y < 4)
+		j = 0;
+		while (j < 4)
 		{
-			while (e->grid[e->c.x][e->c.y - e->c.v] == 0)
+			tmp = i;
+			if (e->grid[tmp][j] == 0)
 			{
-				e->grid[e->c.x][e->c.y - e->c.v] = e->grid[e->c.x][e->c.y];
-				e->grid[e->c.x][e->c.y] = 0;
-				e->c.v++;
+				while (tmp < 3)
+				{
+					e->grid[tmp][j] = e->grid[tmp + 1][j];
+					e->grid[tmp][j] = 0;
+					tmp++;
+				}
 			}
-			if (e->grid[e->c.x][e->c.y - 1] == e->grid[e->c.x][e->c.y])
-			{
-				e->grid[e->c.x][e->c.y - 1] *= 2;
-				e->grid[e->c.x][e->c.y] = 0;
-			}
-			e->c.y++;
+			j++;
 		}
-		e->c.y = 1;
-		e->c.x++;
+		i++;
 	}
 }
 
 static void		move_down(t_env *e)
 {
-	e->c.y = 2;
-	e->c.x = 0;
-	e->c.v = 1;
-	while (e->c.x < 4)
-	{
-		while (e->c.y >= 0)
-		{
-			while (e->grid[e->c.x][e->c.y + e->c.v] == 0)
-			{
-				e->grid[e->c.x][e->c.y + e->c.v] = e->grid[e->c.x][e->c.y];
-				e->grid[e->c.x][e->c.y] = 0;
-				e->c.v++;
-			}
-			e->c.v = 1;
-			if (e->grid[e->c.x][e->c.y + 1] == e->grid[e->c.x][e->c.y])
-			{
-				e->grid[e->c.x][e->c.y + 1] *= 2;
-				e->grid[e->c.x][e->c.y] = 0;
-			}
-			e->c.y--;
-		}
-		e->c.y = 2;
-		e->c.x++;
-	}
+	(void)e;
 }
 
 static void		move_left(t_env *e)
 {
-	e->c.y = 0;
-	e->c.x = 1;
-	e->c.v = 1;
-	while (e->c.y < 4)
+	int		i;
+	int		j;
+	int		tmp;
+
+	i = 0;
+	while (i < 4)
 	{
-		while (e->c.x < 4)
+		j = 0;
+		while (j < 4)
 		{
-			while (e->grid[e->c.x - 1][e->c.y] == 0)
+			if ((j + 1) < 4 && e->grid[i][j + 1] != 0)
 			{
-				e->grid[e->c.x - 1][e->c.y] = e->grid[e->c.x][e->c.y];
-				e->grid[e->c.x][e->c.y] = 0;
-				e->c.v++;
+				tmp = j;
+				while (tmp >= 0 && e->grid[i][tmp] == 0)
+				{
+					e->grid[i][tmp] = e->grid[i][tmp + 1];
+					e->grid[i][tmp + 1] = 0;
+					tmp--;
+					j--;
+				}
 			}
-			if (e->grid[e->c.x - 1][e->c.y] == e->grid[e->c.x][e->c.y])
-			{
-				e->grid[e->c.x - 1][e->c.y] *= 2;
-				e->grid[e->c.x][e->c.y] = 0;
-			}
-			e->c.x++;
+			j++;
 		}
-		e->c.x = 1;
-		e->c.y++;
+		i++;
 	}
 }
 
 static void		move_right(t_env *e)
 {
-	e->c.y = 0;
-	e->c.x = 2;
-	e->c.v = 1;
-	while (e->c.y < 4)
-	{
-		while (e->c.x >= 0)
-		{
-			while (e->grid[e->c.x + 1][e->c.y] == 0)
-			{
-				e->grid[e->c.x + 1][e->c.y] = e->grid[e->c.x][e->c.y];
-				e->grid[e->c.x][e->c.y] = 0;
-				e->c.v++;
-			}
-			if (e->grid[e->c.x + 1][e->c.y] == e->grid[e->c.x][e->c.y])
-			{
-				e->grid[e->c.x + 1][e->c.y] *= 2;
-				e->grid[e->c.x][e->c.y] = 0;
-			}
-			e->c.x--;
-		}
-		e->c.x = 2;
-		e->c.y++;
-	}
+	(void)e;
 }
 
 void			movements(t_env *e, int key)
