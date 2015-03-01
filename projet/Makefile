@@ -6,7 +6,7 @@
 #    By: jbarbie <jbarbie@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/20 18:44:07 by jbarbie           #+#    #+#              #
-#    Updated: 2015/03/01 00:38:34 by vchaillo         ###   ########.fr        #
+#    Updated: 2015/03/01 17:58:27 by vchaillo         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -23,6 +23,7 @@ SRC			=	colors.c \
 				game.c \
 				rand.c \
 				move.c \
+				paint.c \
 
 LIBNCURSES = -lncurses
 
