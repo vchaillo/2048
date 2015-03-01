@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:15:53 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/01 02:53:02 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/01 02:58:32 by jbarbie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,13 @@ enum			e_const
 	WIN_VALUE = 2048
 };
 
+typedef struct	s_coord
+{
+	int			x;
+	int			y;
+	int			v;
+}				t_coord;
+
 typedef struct	s_env
 {
 	int			nb_lines;
@@ -32,6 +39,7 @@ typedef struct	s_env
 	int			case_h;
 	int			case_w;
 	int			grid[4][4];
+	t_coord		c;
 }				t_env;
 
 void			draw_grid(t_env *e);
