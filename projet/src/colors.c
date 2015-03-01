@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 17:59:56 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/01 18:40:00 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/01 21:13:50 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	init_colors(void)
 	init_color(COLOR_WHITE, 300, 300, 300);
 	init_color(COLOR_GREEN, 800, 800, 800);
 	init_color(COLOR_BLUE, 1000, 1000, 800);
-	init_color(COLOR_YELLOW, 1000, 1000, 600);
-	init_color(COLOR_MAGENTA, 1000, 600, 200);
+	init_color(COLOR_YELLOW, 1000, 900, 400);
+	init_color(COLOR_MAGENTA, 1000, 600, 80);
 	init_color(COLOR_CYAN, 1000, 400, 0);
 	init_color(COLOR_RED, 1000, 200, 0);
 	init_pair(1, COLOR_WHITE, COLOR_WHITE);

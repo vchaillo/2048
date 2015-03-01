@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 21:14:32 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/01 19:11:56 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/01 21:06:36 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,5 @@ void			init_game(t_env *e)
 		}
 		i++;
 	}
-	fill_rand_case(e);
 	fill_rand_case(e);
 }
