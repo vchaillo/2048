@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:15:53 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/01 19:02:10 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/01 19:44:16 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 # include <time.h>
 
 # define ESCAPE 27
+# define FALSE 0
+# define TRUE 1
 
 enum			e_const
 {
@@ -31,6 +33,8 @@ typedef struct	s_env
 	int			nb_columns;
 	int			ch;
 	int			cw;
+	int			fusion;
+	int			move;
 	int			grid[4][4];
 }				t_env;
 

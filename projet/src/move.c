@@ -6,7 +6,7 @@
 /*   By: jbarbie <jbarbie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/01 00:23:48 by jbarbie           #+#    #+#             */
-/*   Updated: 2015/03/01 19:18:14 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/01 19:44:18 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,31 @@ static void		move_left(t_env *e)
 
 static void		move_right(t_env *e)
 {
-	(void)e;
+	int		i;
+	int		j;
+	int		tmp;
+
+	i = 0;
+	while (i < 4)
+	{
+		j = 0;
+		while (j < 4)
+		{
+			if ((j + 1) < 4 && e->grid[i][j + 1] != 0)
+			{
+				tmp = j;
+				while (tmp >= 0 && e->grid[i][tmp] == 0)
+				{
+					e->grid[i][tmp] = e->grid[i][tmp + 1];
+					e->grid[i][tmp + 1] = 0;
+					tmp--;
+					j--;
+				}
+			}
+			j++;
+		}
+		i++;
+	}
 }
 
 void			movements(t_env *e, int key)
