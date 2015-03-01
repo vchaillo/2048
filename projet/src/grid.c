@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:19:30 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/02/28 22:05:37 by jbarbie          ###   ########.fr       */
+/*   Updated: 2015/03/01 04:28:22 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ static void	print_help(t_env *e)
 
 static void	get_size_case(t_env *e)
 {
-	e->case_h = ((e->nb_lines - 2) - (e->nb_lines % 4)) / 4;
-	e->case_w = ((e->nb_columns - 1) - (e->nb_columns % 4)) / 4;
-	if (e->case_w < 10 || e->case_h < 5)
+	e->ch = ((e->nb_lines - 2) - (e->nb_lines % 4)) / 4;
+	e->cw = ((e->nb_columns - 1) - (e->nb_columns % 4)) / 4;
+	if (e->cw < 10 || e->ch < 5)
 	{
 		endwin();
 		write(2, "Window too small\n", 17);
@@ -42,17 +42,17 @@ void		draw_grid(t_env *e)
 	move(0, 0);
 	while (i < 5)
 	{
-		whline(stdscr, '-', e->case_w * 4);
+		whline(stdscr, '-', e->cw * 4);
 		i++;
-		move(e->case_h * i, 0);
+		move(e->ch * i, 0);
 	}
 	i = 0;
 	move(0, 0);
 	while (i < 5)
 	{
-		wvline(stdscr, '|', e->case_h * 4 + 1);
+		wvline(stdscr, '|', e->ch * 4 + 1);
 		i++;
-		move(0, e->case_w * i);
+		move(0, e->cw * i);
 	}
 	attroff(COLOR_PAIR(1));
 }

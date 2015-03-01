@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:02:56 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/01 00:36:12 by jbarbie          ###   ########.fr       */
+/*   Updated: 2015/03/01 05:15:04 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ int		main(void)
 	{
 		clear();
 		draw_grid(&e);
-		game(&e, key);
+//		game(&e, key);
+		color_cases(&e);
 	}
 	endwin();
 	return (0);

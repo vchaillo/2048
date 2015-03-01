@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:15:53 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/01 02:59:40 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/01 04:46:12 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ typedef struct	s_env
 {
 	int			nb_lines;
 	int			nb_columns;
-	int			case_h;
-	int			case_w;
+	int			ch;
+	int			cw;
 	int			grid[4][4];
 	t_coord		c;
 }				t_env;
@@ -53,6 +53,5 @@ void			move_down(t_env *e);
 void			move_left(t_env *e);
 void			move_right(t_env *e);
 void			color_cases(t_env *e);
-void			paint_a_case(t_env *e, int x, int y, int val);
 
 #endif

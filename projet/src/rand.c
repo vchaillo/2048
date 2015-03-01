@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 21:44:32 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/01 03:03:54 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/01 05:14:32 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ static	int		get_val(void)
 	a = 2;
 	b = 5;
 	srand(time(NULL));
-	while (val == 3)
-		val = rand() % (b - a) + a;
+	val = rand() % (b - a) + a;
+	if (val == 3)
+		val = 2;
 	return (val);
 }
 
@@ -34,6 +35,7 @@ void			fill_rand_case(t_env *e)
 	int		column;
 	int		val;
 
+	(void)val;
 	a = 0;
 	b = 4;
 	srand(time(NULL));
@@ -44,5 +46,6 @@ void			fill_rand_case(t_env *e)
 	if (e->grid[line][column] != 0)
 		fill_rand_case(e);
 	else
-		e->grid[line][column] = val;
+	//	e->grid[line][column] = 2;
+		e->grid[0][0] = 4;
 }
