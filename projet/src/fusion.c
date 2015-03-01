@@ -6,7 +6,7 @@
 /*   By: jbarbie <jbarbie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/01 19:46:26 by jbarbie           #+#    #+#             */
-/*   Updated: 2015/03/01 20:16:10 by jbarbie          ###   ########.fr       */
+/*   Updated: 2015/03/01 20:21:07 by jbarbie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ static void	fusion_up(t_env *e)
 			{
 				e->grid[y - 1][x] *= 2;
 				e->grid[y][x] = 0;
+				e->fusion = TRUE;
 			}
 			y++;
 		}
@@ -49,6 +50,7 @@ static void	fusion_down(t_env *e)
 			{
 				e->grid[y + 1][x] *= 2;
 				e->grid[y][x] = 0;
+				e->fusion = TRUE;
 			}
 			y--;
 		}
@@ -71,6 +73,7 @@ static void	fusion_left(t_env *e)
 			{
 				e->grid[y][x - 1] *= 2;
 				e->grid[y][x] = 0;
+				e->fusion = TRUE;
 			}
 			x++;
 		}
@@ -93,6 +96,7 @@ static void	fusion_right(t_env *e)
 			{
 				e->grid[y][x + 1] *= 2;
 				e->grid[y][x] = 0;
+				e->fusion = TRUE;
 			}
 			x--;
 		}
