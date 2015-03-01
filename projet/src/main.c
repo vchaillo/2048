@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:02:56 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/01 20:30:57 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/01 20:31:52 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ int		main(void)
 		clear();
 		draw_grid(&e);
 		movements(&e, key);
-		e->fusion = FALSE;
+		e.fusion = FALSE;
 		check_fusion(&e, key);
-		if (e->fusion == TRUE)
+		if (e.fusion == TRUE)
 			movements(&e, key);
 		fill_rand_case(&e);
 		color_cases(&e);
