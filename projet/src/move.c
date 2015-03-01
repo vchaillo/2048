@@ -6,7 +6,7 @@
 /*   By: jbarbie <jbarbie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/01 00:23:48 by jbarbie           #+#    #+#             */
-/*   Updated: 2015/03/01 02:14:26 by jbarbie          ###   ########.fr       */
+/*   Updated: 2015/03/01 03:02:11 by jbarbie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,29 +42,29 @@ void	move_up(t_env *e)
 
 void	move_down(t_env *e)
 {
-	int	y;
-	int	x;
-
-	y = 2;
-	x = 0;
-	while (x < 4)
+	e->c.y = 2;
+	e->c.x = 0;
+	e->c.v = 1;
+	while (e->c.x < 4)
 	{
-		while (y >= 0)
+		while (e->c.y >= 0)
 		{
-			if (e->grid[x][y + 1] == 0)
+			while (e->grid[e->c.x][e->c.y + e->c.v] == 0)
 			{
-				e->grid[x][y + 1] = e->grid[x][y];
-				e->grid[x][y] = 0;
+				e->grid[e->c.x][e->c.y + e->c.v] = e->grid[e->c.x][e->c.y];
+				e->grid[e->c.x][e->c.y] = 0;
+				e->c.v++;
 			}
-			else if (e->grid[x][y + 1] == e->grid[x][y])
+			e->c.v = 1;
+			if (e->grid[e->c.x][e->c.y + 1] == e->grid[e->c.x][e->c.y])
 			{
-				e->grid[x][y + 1] *= 2;
-				e->grid[x][y] = 0;
+				e->grid[e->c.x][e->c.y + 1] *= 2;
+				e->grid[e->c.x][e->c.y] = 0;
 			}
-			y--;
+			e->c.y--;
 		}
-		y = 2;
-		x++;
+		e->c.y = 2;
+		e->c.x++;
 	}
 }
 
