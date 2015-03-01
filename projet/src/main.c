@@ -6,16 +6,29 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:02:56 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/01 20:31:52 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/01 20:54:10 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-int		main(void)
+static void		do_game(t_env *e, int key)
 {
-	int		key;
-	t_env	e;
+	clear();
+	draw_grid(e);
+	movements(e, key);
+	e->fusion = FALSE;
+	check_fusion(e, key);
+	if (e->fusion == TRUE)
+		movements(e, key);
+	fill_rand_case(e);
+	color_cases(e);
+}
+
+int				main(void)
+{
+	int			key;
+	t_env		e;
 
 	initscr();
 	raw();
@@ -27,17 +40,7 @@ int		main(void)
 	getmaxyx(stdscr, e.nb_lines, e.nb_columns);
 	draw_menu(&e);
 	while ((key = getch()) != ESCAPE)
-	{
-		clear();
-		draw_grid(&e);
-		movements(&e, key);
-		e.fusion = FALSE;
-		check_fusion(&e, key);
-		if (e.fusion == TRUE)
-			movements(&e, key);
-		fill_rand_case(&e);
-		color_cases(&e);
-	}
+		do_game(&e, key);
 	endwin();
 	return (0);
 }
