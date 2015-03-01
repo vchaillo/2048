@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 21:44:32 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/01 06:04:49 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/01 06:19:57 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,8 @@ void			fill_rand_case(t_env *e)
 	e->grid[1][1] = 512;
 	e->grid[1][2] = 1024;
 	e->grid[3][3] = 512;
-	e->grid[line][column] = val;
+	//e->grid[line][column] = val;
+	e->grid[3][0] = val;
 	move(7, 1);
 	printw("line = %d", line);
 	move(8, 1);
