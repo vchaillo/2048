@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 21:14:32 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/01 02:37:50 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/01 02:54:42 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,27 @@ void	game(t_env *e, int key)
 	fill_rand_case(e);
 }
 
-void	paint_cases(t_env *e)
+void	color_cases(t_env *e)
+{
+	int		x;
+	int		y;
+
+	y = 0;
+	while (y < 4)
+	{
+		x = 0;
+		while (x < 4)
+		{
+			if (e->grid[y][x] == 0)
+				x++;
+			else
+				paint_a_case(e);
+		}
+		y++;
+	}
+}
+
+void	paint_a_case(t_env *e)
 {
 	(void)e;
 }
