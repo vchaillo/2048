@@ -6,13 +6,13 @@
 /*   By: jbarbie <jbarbie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/01 00:23:48 by jbarbie           #+#    #+#             */
-/*   Updated: 2015/03/01 03:37:28 by jbarbie          ###   ########.fr       */
+/*   Updated: 2015/03/01 18:44:01 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-void	move_up(t_env *e)
+static void		move_up(t_env *e)
 {
 	e->c.y = 1;
 	e->c.x = 0;
@@ -39,7 +39,7 @@ void	move_up(t_env *e)
 	}
 }
 
-void	move_down(t_env *e)
+static void		move_down(t_env *e)
 {
 	e->c.y = 2;
 	e->c.x = 0;
@@ -67,7 +67,7 @@ void	move_down(t_env *e)
 	}
 }
 
-void	move_left(t_env *e)
+static void		move_left(t_env *e)
 {
 	e->c.y = 0;
 	e->c.x = 1;
@@ -94,7 +94,7 @@ void	move_left(t_env *e)
 	}
 }
 
-void	move_right(t_env *e)
+static void		move_right(t_env *e)
 {
 	e->c.y = 0;
 	e->c.x = 2;
@@ -119,4 +119,17 @@ void	move_right(t_env *e)
 		e->c.x = 2;
 		e->c.y++;
 	}
+}
+
+void			movements(t_env *e, int key)
+{
+	if (key == KEY_UP)
+		move_up(e);
+	if (key == KEY_DOWN)
+		move_down(e);
+	if (key == KEY_LEFT)
+		move_left(e);
+	if (key == KEY_RIGHT)
+		move_right(e);
+	fill_rand_case(e);
 }
