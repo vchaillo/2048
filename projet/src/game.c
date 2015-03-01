@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 21:14:32 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/01 02:22:16 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/01 02:37:50 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	game(t_env *e, int key)
 		move_left(e);
 	if (key == KEY_RIGHT)
 		move_right(e);
+	fill_rand_case(e);
 }
 
 void	paint_cases(t_env *e)
