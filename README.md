@@ -1,7 +1,4 @@
 # 2048
 
-Todo List:
-----------
-- Verifier et regler le rand
-- Le move segfault
-- Regler probleme affichage capricieux
+-------------
+Project of 42

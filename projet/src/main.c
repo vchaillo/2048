@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:02:56 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/01 22:26:46 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/01 23:29:11 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int		check_win_value(void)
 	jl = 1;
 	while (jl < WIN_VALUE)
 		jl *= 2;
-	if (jl != WIN_VALUE || WIN_VALUE == 1)
+	if (jl != WIN_VALUE || WIN_VALUE == 1 || WIN_VALUE < 0)
 		return (FALSE);
 	return (TRUE);
 }
@@ -52,6 +52,7 @@ static int		do_game(t_env *e, int key)
 	}
 	color_cases(e);
 	e->init = FALSE;
+	check_state(e, key);
 	return (TRUE);
 }
 
@@ -70,7 +71,7 @@ int				main(void)
 	init_game(&e);
 	getmaxyx(stdscr, e.nb_lines, e.nb_columns);
 	draw_menu(&e);
-	while ((key = getch()) != ESCAPE && check_win_value())
+	while ((key = getch()) != ESCAPE && check_win_value() && e.state != QUIT)
 	{
 		val = do_game(&e, key);
 		if (val == FALSE)

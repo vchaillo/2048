@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:19:30 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/01 22:21:27 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/01 23:37:03 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,12 @@
 
 static void	print_help(t_env *e)
 {
+	attron(COLOR_PAIR(2));
+	move(e->nb_lines - 3, 0);
+	printw("Use up, down, right, left arrows to move.");
 	move(e->nb_lines - 1, 0);
-	printw("Up,Down,Right,Left,Echap.");
+	printw("Press Echap to quit.");
+	attroff(COLOR_PAIR(2));
 }
 
 void		draw_grid(t_env *e)
