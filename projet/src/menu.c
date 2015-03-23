@@ -19,5 +19,5 @@ void	draw_menu(t_env *e)
 	printw("Welcome to best 2048 game ever!");
 	move(e->nb_lines / 3 + 2, (e->nb_columns / 2) - 15);
 	printw("Press any key to start the game");
-	attron(COLOR_PAIR(2));
+	attroff(COLOR_PAIR(2));
 }

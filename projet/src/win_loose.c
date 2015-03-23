@@ -15,15 +15,22 @@
 static void		draw_victory(t_env *e, int key)
 {
 	clear();
+	attron(COLOR_PAIR(2));
 	move(e->nb_lines / 3, (e->nb_columns / 2) - 4);
 	printw("YOU WIN!");
 	move((e->nb_lines / 3) + 2, (e->nb_columns / 2) - 23);
-	printw("Press twice escape or space to quit or continue");
+	printw("Press escape to quit or space to continue");
+	attroff(COLOR_PAIR(2));
 	key = getch();
 	if (key == 32)
+	{
 		e->state = CONTINUE;
+		clear();
+		draw_grid(e);
+		color_cases(e);
+	}
 	if (key == ESCAPE)
-		e->state = QUIT;
+		exit(0);;
 }
 
 static void		is_win(t_env *e, int key)
@@ -47,11 +54,18 @@ static void		is_win(t_env *e, int key)
 
 static void		draw_loose(t_env *e)
 {
+	int		key;
+
 	clear();
+	attron(COLOR_PAIR(2));
 	move(e->nb_lines / 3, (e->nb_columns / 2) - 5);
 	printw("YOU LOOSE!");
 	move((e->nb_lines / 3) + 2, (e->nb_columns / 2) - 15);
-	printw("Press any key to quit the game");
+	printw("Press escape to quit the game");
+	attroff(COLOR_PAIR(2));
+	while ((key = getch()) != ESCAPE)
+		;
+	exit(0);
 }
 
 static int		is_loose(t_env *e)

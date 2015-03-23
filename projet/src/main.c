@@ -47,7 +47,7 @@ static int		do_game(t_env *e, int key)
 		check_fusion(e, key);
 		if (e->fusion == TRUE)
 			movements(e, key);
-		if (e->move == TRUE)
+		if (e->move == TRUE || e->fusion == TRUE)
 			fill_rand_case(e);
 	}
 	color_cases(e);
