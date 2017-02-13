@@ -2,7 +2,7 @@
 
 * [Sujet] (https://github.com/vchaillo/2048/blob/master/wong_kar_wai.pdf)
 
-<img src="https://raw.githubusercontent.com/vchaillo/2048/master/doc/screenshots/Screenshot_20170213_075708.png"/>
+<img src="https://raw.githubusercontent.com/vchaillo/2048/master/doc/screenshots/Screenshot_20170213_075742.png"/>
 
 =============
 ###Description
