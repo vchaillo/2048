@@ -2,8 +2,6 @@
 
 * [Sujet] (https://github.com/vchaillo/2048/blob/master/wong_kar_wai.pdf)
 
-<img src="https://raw.githubusercontent.com/vchaillo/2048/master/doc/screenshots/Screenshot_20170213_075742.png"/>
-
 =============
 ###Description
 
@@ -24,6 +22,9 @@ Le but de ce rush est de recoder le jeu 2048 en C pour un affichage console.
 make
 ./game_2048
 ```
+===================
+
+<img src="https://raw.githubusercontent.com/vchaillo/2048/master/doc/screenshots/Screenshot_20170213_075742.png"/>
 
 ===================
 Projet de l'ecole 42
