@@ -1,12 +1,12 @@
-#2048
+2048
+====
 
-* [Sujet] (https://github.com/vchaillo/2048/blob/master/wong_kar_wai.pdf)
+[Subject](../master/wong_kar_wai.pdf)
 
 <img src="https://raw.githubusercontent.com/vchaillo/2048/master/doc/screenshots/Screenshot_20170213_081429.png" width="49%"/>
 <img src="https://raw.githubusercontent.com/vchaillo/2048/master/doc/screenshots/Screenshot_20170213_080901.png" width="49%"/>
 
-=============
-###Description
+### Description
 
 Le but de ce rush est de recoder le jeu 2048 en C pour un affichage console.
 
@@ -18,13 +18,11 @@ Le but de ce rush est de recoder le jeu 2048 en C pour un affichage console.
 > tile with the total value of the two tiles that collided. The resulting tile cannot merge with
 > another tile again in the same move. (source : Wikipedia)
 
-=============
-###Utilisation
+### Utilisation
 
 ```
 make
 ./game_2048
 ```
 
-===================
-Projet de l'ecole 42
+###### Project of school 42
